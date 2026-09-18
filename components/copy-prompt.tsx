@@ -5,17 +5,37 @@ import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { UNOFFICIAL_SHORT } from "@/lib/disclaimer";
 
+function fallbackCopy(text: string) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
+
 export function CopyPrompt({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
 
   async function onCopy() {
     try {
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      window.setTimeout(() => setCopied(false), 2000);
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("clipboard unavailable");
+      }
+      await Promise.race([
+        navigator.clipboard.writeText(text),
+        new Promise((_, reject) => {
+          window.setTimeout(() => reject(new Error("clipboard timeout")), 1000);
+        }),
+      ]);
     } catch {
-      setCopied(false);
+      fallbackCopy(text);
     }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 2000);
   }
 
   return (
