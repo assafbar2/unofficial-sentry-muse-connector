@@ -97,7 +97,7 @@ describe("unofficial concept handlers", () => {
       fetchImpl,
     });
 
-    expect(result.note).toContain("unofficial");
+    expect(result.note).toContain("Unofficial concept");
     expect(result.issues[0]?.id).toBe("42");
     expect(calls[0]?.url).toContain("https://us.sentry.io/");
     expect(calls[0]?.url).toContain("query=is%3Aunresolved+assigned%3Ame");
