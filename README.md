@@ -22,6 +22,28 @@ Every JSON response includes `unofficialConcept: true` plus the disclaimer, and 
 - Not Sentry MCP (`https://mcp.sentry.dev`)
 - Not affiliated with, endorsed by, or published by Sentry or Meta
 
+## Live public host (Vercel Hobby)
+
+This unofficial sketch is deployed on a free Vercel Hobby project so Meta can fetch HTTPS URLs. It is still not an official Sentry or Meta product.
+
+**Public origin:** [https://unofficial-sentry-muse-connector.vercel.app](https://unofficial-sentry-muse-connector.vercel.app)
+
+Paste these into Muse Connector Platform **Technical specs** only if you file this as an **independent unofficial** listing — never as Sentry:
+
+| Field | Value |
+| --- | --- |
+| API / base URL | `https://unofficial-sentry-muse-connector.vercel.app/api/v1` |
+| OpenAPI spec | `https://unofficial-sentry-muse-connector.vercel.app/openapi.json` |
+| SKILL | `https://unofficial-sentry-muse-connector.vercel.app/skill.md` |
+| Documentation | `https://unofficial-sentry-muse-connector.vercel.app` |
+| Privacy policy | `https://unofficial-sentry-muse-connector.vercel.app/privacy` |
+| Terms of service | `https://unofficial-sentry-muse-connector.vercel.app/terms` |
+| Icon (512×512 PNG) | `https://unofficial-sentry-muse-connector.vercel.app/connector-icon.png` |
+
+Vercel Deployment Protection is off on this project so Muse can read OpenAPI and SKILL without a login wall.
+
+GitHub: [https://github.com/assafbar2/unofficial-sentry-muse-connector](https://github.com/assafbar2/unofficial-sentry-muse-connector). Deployed on Vercel (Hobby). Connect that GitHub repo in the Vercel dashboard if you want later pushes to auto-deploy.
+
 ## Run locally
 
 ```bash
@@ -57,26 +79,13 @@ See [PARTNER.md](./PARTNER.md). That file is also an unofficial sample, not a re
 
 ## Privacy and terms (for the Meta form)
 
-You do not need a separate legal site. After this app is on a public URL, use:
+You do not need a separate legal site. The live unofficial pages are:
 
-- Privacy: `https://YOUR-HOST/privacy`
-- Terms: `https://YOUR-HOST/terms`
-- Icon: `https://YOUR-HOST/connector-icon.png` (512×512 PNG)
+- Privacy: [https://unofficial-sentry-muse-connector.vercel.app/privacy](https://unofficial-sentry-muse-connector.vercel.app/privacy)
+- Terms: [https://unofficial-sentry-muse-connector.vercel.app/terms](https://unofficial-sentry-muse-connector.vercel.app/terms)
+- Icon: [https://unofficial-sentry-muse-connector.vercel.app/connector-icon.png](https://unofficial-sentry-muse-connector.vercel.app/connector-icon.png)
 
-Until it is deployed, those pages still work locally at [http://localhost:3000/privacy](http://localhost:3000/privacy).
-
-## Putting this on GitHub
-
-GitHub is only a shared folder for the code. This agent cannot create the folder for you (GitHub is not connected here).
-
-1. Open [https://github.com/new](https://github.com/new) while logged into GitHub.
-2. Repository name: `unofficial-sentry-muse-connector` (or anything you like).
-3. Choose **Private**.
-4. Leave “Add a README” **unchecked**.
-5. Click **Create repository**.
-6. Copy the repo URL (it looks like `https://github.com/YOURNAME/unofficial-sentry-muse-connector.git`) and paste it in a message here.
-
-That is the whole “GitHub thingy.” Then this agent can push the code. You do not need GitHub to try the API locally.
+They are not Sentry’s legal pages. Local copies still work at [http://localhost:3000/privacy](http://localhost:3000/privacy).
 
 ## Questions
 

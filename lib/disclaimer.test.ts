@@ -25,5 +25,6 @@ describe("unofficial disclaimer", () => {
     const headers = unofficialHeaders();
     expect(headers.get("X-Unofficial-Concept")).toBe("true");
     expect(headers.get("X-Product-Name")).toBe(PRODUCT_NAME);
+    expect(headers.get("Access-Control-Allow-Origin")).toBe("*");
   });
 });

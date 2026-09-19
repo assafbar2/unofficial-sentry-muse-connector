@@ -121,7 +121,7 @@ export default async function Home() {
           <DocLink href="/openapi.json" title="OpenAPI" detail="Machine-readable unofficial API" />
           <DocLink href="/skill.md" title="SKILL.md" detail="How Muse should treat this concept" />
           <DocLink href="/api/v1" title="GET /api/v1" detail="Discovery JSON with disclaimer" />
-          <DocLink href="/privacy" title="Privacy" detail="Use this URL in Meta’s form after you deploy" />
+          <DocLink href="/privacy" title="Privacy" detail="Live unofficial privacy URL for the Meta form" />
           <DocLink href="/terms" title="Terms" detail="Unofficial terms of use for this sketch" />
         </div>
         <div className="overflow-x-auto rounded-xl ring-1 ring-foreground/10">

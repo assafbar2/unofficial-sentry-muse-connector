@@ -51,11 +51,15 @@ Do **not** submit the following to Meta. It is placeholder copy for this unoffic
 
 ## Filing this with Meta or Sentry
 
-Do not file this as Sentry. If you file it as an independent unofficial sketch, use:
+Do not file this as Sentry. If you file it as an independent unofficial sketch, the live Vercel Hobby host is:
 
-- Privacy: `{origin}/privacy`
-- Terms: `{origin}/terms`
-- Icon: `{origin}/connector-icon.png`
+- Docs / landing: `https://unofficial-sentry-muse-connector.vercel.app`
+- API: `https://unofficial-sentry-muse-connector.vercel.app/api/v1`
+- OpenAPI: `https://unofficial-sentry-muse-connector.vercel.app/openapi.json`
+- SKILL: `https://unofficial-sentry-muse-connector.vercel.app/skill.md`
+- Privacy: `https://unofficial-sentry-muse-connector.vercel.app/privacy`
+- Terms: `https://unofficial-sentry-muse-connector.vercel.app/terms`
+- Icon: `https://unofficial-sentry-muse-connector.vercel.app/connector-icon.png`
 
 Those routes ship with this app. They are not Sentry’s legal pages.
 

@@ -40,5 +40,10 @@ export function unofficialHeaders(
   const headers = new Headers(extra);
   headers.set(UNOFFICIAL_HEADER, "true");
   headers.set("X-Product-Name", PRODUCT_NAME);
+  headers.set("Access-Control-Allow-Origin", "*");
+  headers.set(
+    "Access-Control-Allow-Headers",
+    "Authorization, Content-Type, X-Sentry-Host",
+  );
   return headers;
 }
