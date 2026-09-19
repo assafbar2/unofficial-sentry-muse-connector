@@ -41,9 +41,9 @@ export default async function Home() {
         <Image
           src="/connector-icon.png"
           alt="Unofficial cute Muse connector icon with a purple cloak, not an official Sentry or Meta logo"
-          width={128}
-          height={128}
-          className="size-24 rounded-2xl ring-1 ring-foreground/10"
+          width={77}
+          height={77}
+          className="rounded-2xl ring-1 ring-foreground/10"
         />
         <h1 className="font-heading text-3xl font-semibold tracking-tight text-balance">
           {PRODUCT_NAME}
