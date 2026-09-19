@@ -12,7 +12,7 @@ describe("Muse packaging for the unofficial concept", () => {
     expect(prompt).toContain(`${origin}/openapi.json`);
     expect(prompt).toContain(`${origin}/skill.md`);
     expect(prompt).toContain("Treat it as an independent interpretation");
-    expect(prompt).toContain("assaf.barnir@sentry.io");
+    expect(prompt).toContain("barnir@agentmail.to");
   });
 
   it("titles the SKILL as an unofficial concept", () => {
@@ -20,7 +20,7 @@ describe("Muse packaging for the unofficial concept", () => {
     expect(skill.startsWith(`# ${PRODUCT_NAME}`)).toBe(true);
     expect(skill).toContain(UNOFFICIAL_DISCLAIMER);
     expect(skill).toContain("Do not claim this is listed in the official Muse connector directory");
-    expect(skill).toContain("assaf.barnir@sentry.io");
+    expect(skill).toContain("barnir@agentmail.to");
   });
 
   it("marks OpenAPI info as an unofficial concept", () => {
@@ -30,7 +30,7 @@ describe("Muse packaging for the unofficial concept", () => {
     expect(spec.info["x-disclaimer"]).toBe(UNOFFICIAL_DISCLAIMER);
     expect(spec.info.description).toContain("Not a Meta-reviewed directory connector");
     expect(spec.servers[0]?.description).toContain("Not an official Sentry or Meta host");
-    expect(spec.info.contact?.email).toBe("assaf.barnir@sentry.io");
+    expect(spec.info.contact?.email).toBe("barnir@agentmail.to");
     expect(spec.info.contact?.name).toBe("Assaf Barnir");
   });
 });

@@ -55,4 +55,4 @@ Do not. If an official connector is desired, that would be a separate, first-par
 
 ## Questions (unofficial sketch)
 
-Ping **Assaf Barnir** at [assaf.barnir@sentry.io](mailto:assaf.barnir@sentry.io). Personal contact for this independent interpretation, not a Sentry or Meta partner/support channel.
+Ping **Assaf Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to). Personal contact for this independent interpretation, not a Sentry or Meta partner/support channel.

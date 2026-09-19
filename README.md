@@ -57,4 +57,4 @@ See [PARTNER.md](./PARTNER.md). That file is also an unofficial sample, not a re
 
 ## Questions
 
-This unofficial concept is a personal sketch. Email **Assaf Barnir** at [assaf.barnir@sentry.io](mailto:assaf.barnir@sentry.io) with questions. That is not a Sentry or Meta support channel.
+This unofficial concept is a personal sketch. Email **Assaf Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to) with questions. That is not a Sentry or Meta support channel.
