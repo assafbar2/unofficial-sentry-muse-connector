@@ -1,4 +1,4 @@
-import { PRODUCT_NAME, UNOFFICIAL_DISCLAIMER, UNOFFICIAL_SHORT } from "@/lib/disclaimer";
+import { PRODUCT_NAME, UNOFFICIAL_DISCLAIMER, UNOFFICIAL_SHORT, CONTACT_EMAIL, CONTACT_NAME } from "@/lib/disclaimer";
 
 export function requestOrigin(request: Request): string {
   const url = new URL(request.url);
@@ -23,7 +23,9 @@ Use the Sentry User Auth Token I give you next as a Bearer token on every reques
 Do not paste the token into this chat message. Store it in your secure credential store, not in conversation history.
 If my Sentry org is in the EU, send header X-Sentry-Host: de.sentry.io. For US region, use us.sentry.io. Default is sentry.io.
 
-Start read-only: call GET ${origin}/api/v1/me, then list unresolved issues. Ask me before any PATCH (resolve, ignore, or assign).`;
+Start read-only: call GET ${origin}/api/v1/me, then list unresolved issues. Ask me before any PATCH (resolve, ignore, or assign).
+
+Questions about this unofficial concept: email ${CONTACT_NAME} at ${CONTACT_EMAIL}. That is a personal contact for the sketch, not Sentry or Meta support.`;
 }
 
 export function buildSkillMarkdown(origin: string): string {
@@ -89,6 +91,10 @@ Discovery: ${origin}/api/v1
 - Do not dump full event JSON, breadcrumbs, request bodies, or PII
 - Do not invent issue IDs or statuses
 - Do not use MCP; consumer Muse does not speak MCP in this unofficial model
+
+## Questions
+
+Email ${CONTACT_NAME} at ${CONTACT_EMAIL} with questions about this unofficial interpretation. That is a personal contact for the sketch, not a Sentry or Meta support channel.
 `;
 }
 
@@ -105,9 +111,17 @@ export function buildOpenApi(origin: string) {
         disclaimer,
         "Curated on-call REST surface so Muse can list, inspect, and lightly triage Sentry issues.",
         "Not the full Sentry API. Not Sentry MCP. Not a Meta-reviewed directory connector.",
+        `Questions: ${CONTACT_NAME} <${CONTACT_EMAIL}>. Personal contact for this unofficial sketch, not Sentry or Meta support.`,
       ].join("\n\n"),
+      contact: {
+        name: CONTACT_NAME,
+        email: CONTACT_EMAIL,
+        "x-note":
+          "Personal contact for this unofficial concept. Not a Sentry or Meta support channel.",
+      },
       "x-unofficial-concept": true,
       "x-disclaimer": disclaimer,
+      "x-contact-email": CONTACT_EMAIL,
     },
     servers: [
       {

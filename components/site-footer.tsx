@@ -1,4 +1,10 @@
-import { PRODUCT_NAME, UNOFFICIAL_DISCLAIMER } from "@/lib/disclaimer";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  CONTACT_NAME,
+  PRODUCT_NAME,
+  UNOFFICIAL_DISCLAIMER,
+} from "@/lib/disclaimer";
 
 export function SiteFooter() {
   return (
@@ -9,6 +15,14 @@ export function SiteFooter() {
         <p>
           Sentry, Muse, and Meta names are used only to describe this independent
           sketch. No directory listing, partnership, or endorsement is claimed.
+        </p>
+        <p>
+          Questions:{" "}
+          <a className="underline underline-offset-3 hover:text-foreground" href={CONTACT_MAILTO}>
+            {CONTACT_NAME} ({CONTACT_EMAIL})
+          </a>
+          . Personal contact for this unofficial sketch, not a Sentry or Meta
+          support channel.
         </p>
       </div>
     </footer>

@@ -12,7 +12,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { PRODUCT_NAME, UNOFFICIAL_DISCLAIMER } from "@/lib/disclaimer";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO,
+  CONTACT_NAME,
+  PRODUCT_NAME,
+  UNOFFICIAL_DISCLAIMER,
+} from "@/lib/disclaimer";
 import { buildMuseConnectPrompt } from "@/lib/muse";
 
 async function currentOrigin() {
@@ -136,6 +142,29 @@ export default async function Home() {
           also set. {UNOFFICIAL_DISCLAIMER}
         </p>
       </section>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Questions about this unofficial concept</CardTitle>
+          <CardDescription>
+            Personal contact for the sketch — not Sentry support, not Meta
+            support, not an official partner channel.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="text-sm leading-6">
+          <p>
+            Ping{" "}
+            <a className="font-medium underline underline-offset-3" href={CONTACT_MAILTO}>
+              {CONTACT_NAME}
+            </a>{" "}
+            at{" "}
+            <a className="font-medium underline underline-offset-3" href={CONTACT_MAILTO}>
+              {CONTACT_EMAIL}
+            </a>
+            .
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

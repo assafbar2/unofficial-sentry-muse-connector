@@ -54,3 +54,7 @@ npm run build
 ## Sample partner packet
 
 See [PARTNER.md](./PARTNER.md). That file is also an unofficial sample, not a real submission to Muse Connector Platform.
+
+## Questions
+
+This unofficial concept is a personal sketch. Email **Assaf Barnir** at [assaf.barnir@sentry.io](mailto:assaf.barnir@sentry.io) with questions. That is not a Sentry or Meta support channel.

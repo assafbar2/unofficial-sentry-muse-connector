@@ -52,3 +52,7 @@ Do **not** submit the following to Meta. It is placeholder copy for this unoffic
 ## Filing this with Meta or Sentry
 
 Do not. If an official connector is desired, that would be a separate, first-party program between Sentry and Meta. This repository is an independent interpretation only.
+
+## Questions (unofficial sketch)
+
+Ping **Assaf Barnir** at [assaf.barnir@sentry.io](mailto:assaf.barnir@sentry.io). Personal contact for this independent interpretation, not a Sentry or Meta partner/support channel.

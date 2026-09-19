@@ -1,5 +1,11 @@
 import { jsonError, jsonUnofficial } from "@/lib/http";
-import { PRODUCT_NAME, UNOFFICIAL_DISCLAIMER, UNOFFICIAL_SHORT } from "@/lib/disclaimer";
+import {
+  CONTACT_EMAIL,
+  CONTACT_NAME,
+  PRODUCT_NAME,
+  UNOFFICIAL_DISCLAIMER,
+  UNOFFICIAL_SHORT,
+} from "@/lib/disclaimer";
 import { requestOrigin } from "@/lib/muse";
 
 export const dynamic = "force-dynamic";
@@ -26,6 +32,11 @@ export function GET(request: Request) {
     auth: {
       type: "Sentry User Auth Token as Authorization: Bearer",
       storesTokens: false,
+    },
+    contact: {
+      name: CONTACT_NAME,
+      email: CONTACT_EMAIL,
+      note: "Personal contact for questions about this unofficial sketch. Not Sentry support and not Meta support.",
     },
   });
 }

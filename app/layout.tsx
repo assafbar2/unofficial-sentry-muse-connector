@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { UnofficialBanner } from "@/components/unofficial-banner";
 import {
+  CONTACT_EMAIL,
+  CONTACT_NAME,
   PRODUCT_NAME,
   UNOFFICIAL_DISCLAIMER,
   UNOFFICIAL_SHORT,
@@ -21,10 +23,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: PRODUCT_NAME,
-  description: `${UNOFFICIAL_SHORT} ${UNOFFICIAL_DISCLAIMER}`,
+  description: `${UNOFFICIAL_SHORT} ${UNOFFICIAL_DISCLAIMER} Questions: ${CONTACT_NAME} <${CONTACT_EMAIL}>.`,
   robots: { index: false, follow: false },
+  authors: [{ name: CONTACT_NAME, url: `mailto:${CONTACT_EMAIL}` }],
   other: {
     "x-unofficial-concept": "true",
+    "x-contact-email": CONTACT_EMAIL,
   },
 };
 

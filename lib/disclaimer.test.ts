@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
+  CONTACT_EMAIL,
+  CONTACT_NAME,
   PRODUCT_NAME,
   UNOFFICIAL_DISCLAIMER,
   unofficialHeaders,
@@ -15,6 +17,8 @@ describe("unofficial disclaimer", () => {
     expect(UNOFFICIAL_DISCLAIMER).toContain("independent interpretation");
     expect(UNOFFICIAL_DISCLAIMER).toContain("Not affiliated with, endorsed by, or published by Sentry or Meta");
     expect(PRODUCT_NAME).toMatch(/^Unofficial concept:/);
+    expect(CONTACT_EMAIL).toBe("assaf.barnir@sentry.io");
+    expect(CONTACT_NAME).toBe("Assaf Barnir");
   });
 
   it("sets the unofficial HTTP header", () => {

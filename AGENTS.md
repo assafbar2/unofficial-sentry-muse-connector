@@ -7,3 +7,4 @@ Unofficial concept. Not affiliated with, endorsed by, or published by Sentry or 
 - Curated on-call API only: me, issues list/get, truncated latest-event, PATCH status/assignee.
 - `X-Sentry-Host` allowlist: sentry.io, us.sentry.io, de.sentry.io.
 - Never log Bearer tokens.
+- Questions: Assaf Barnir <assaf.barnir@sentry.io> (personal contact for this unofficial sketch).
