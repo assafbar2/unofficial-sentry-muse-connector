@@ -11,7 +11,7 @@ A small, stateless Next.js API that Muse can ingest as a **custom connector**:
 - OpenAPI at `/openapi.json` (titled as an unofficial concept)
 - SKILL at `/skill.md` (instructs Muse to disclose that this is unofficial)
 - Curated on-call endpoints under `/api/v1/*`
-- A landing page that repeats the unofficial disclaimer in the banner, hero, prompt, table, and footer
+- A landing page: banner + product name, then what a visitor can actually do
 
 Every JSON response includes `unofficialConcept: true` plus the disclaimer, and the `X-Unofficial-Concept: true` header.
 
@@ -21,6 +21,16 @@ Every JSON response includes `unofficialConcept: true` plus the disclaimer, and 
 - Not an official Meta / Muse listing
 - Not Sentry MCP (`https://mcp.sentry.dev`)
 - Not affiliated with, endorsed by, or published by Sentry or Meta
+
+## What a visitor can do
+
+The live site is a working custom-connector host, not a login product:
+
+- **From Muse:** copy the prompt on the page, give Muse your own Sentry User Auth Token, ask what’s on fire.
+- **From a terminal:** `curl` `/api/v1/me` and `/api/v1/issues` with that token.
+- **Without a token:** read OpenAPI, SKILL, privacy, terms, and the demo screenshot. You will not see Sentry data.
+
+There is no account to create on this site. Muse’s official directory is separate; custom connect works without it.
 
 ## Live public host (Vercel Hobby)
 
@@ -39,6 +49,7 @@ Paste these into Muse Connector Platform **Technical specs** only if you file th
 | Privacy policy | `https://unofficial-sentry-muse-connector.vercel.app/privacy` |
 | Terms of service | `https://unofficial-sentry-muse-connector.vercel.app/terms` |
 | Icon (512×512 PNG) | `https://unofficial-sentry-muse-connector.vercel.app/connector-icon.png` |
+| Screenshot | `https://unofficial-sentry-muse-connector.vercel.app/how-it-looks.png` |
 
 Vercel Deployment Protection is off on this project so Muse can read OpenAPI and SKILL without a login wall.
 
@@ -89,4 +100,6 @@ They are not Sentry’s legal pages. Local copies still work at [http://localhos
 
 ## Questions
 
-This unofficial concept is a personal sketch. Email **Assaf Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to) with questions. That is not a Sentry or Meta support channel.
+This unofficial concept is a personal sketch. Email **Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to) with questions. That is not a Sentry or Meta support channel.
+
+Screenshot (demo sketch): [https://unofficial-sentry-muse-connector.vercel.app/how-it-looks.png](https://unofficial-sentry-muse-connector.vercel.app/how-it-looks.png)

@@ -31,6 +31,6 @@ describe("Muse packaging for the unofficial concept", () => {
     expect(spec.info.description).toContain("Not a Meta-reviewed directory connector");
     expect(spec.servers[0]?.description).toContain("Not an official Sentry or Meta host");
     expect(spec.info.contact?.email).toBe("barnir@agentmail.to");
-    expect(spec.info.contact?.name).toBe("Assaf Barnir");
+    expect(spec.info.contact?.name).toBe("Barnir");
   });
 });

@@ -1,9 +1,8 @@
 import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";
-import { TriangleAlert } from "lucide-react";
 import { CopyPrompt } from "@/components/copy-prompt";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { DemoSketch } from "@/components/demo-sketch";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -18,7 +17,6 @@ import {
   CONTACT_MAILTO,
   CONTACT_NAME,
   PRODUCT_NAME,
-  UNOFFICIAL_DISCLAIMER,
 } from "@/lib/disclaimer";
 import { buildMuseConnectPrompt } from "@/lib/muse";
 
@@ -37,10 +35,9 @@ export default async function Home() {
   return (
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-4 py-10">
       <section className="space-y-4">
-        <Badge variant="outline">Unofficial concept</Badge>
         <Image
           src="/connector-icon.png"
-          alt="Unofficial cute Muse connector icon with a purple cloak, not an official Sentry or Meta logo"
+          alt="Cute Muse-style sketch icon in a purple cloak, not an official Sentry or Meta logo"
           width={77}
           height={77}
           className="rounded-2xl ring-1 ring-foreground/10"
@@ -49,51 +46,65 @@ export default async function Home() {
           {PRODUCT_NAME}
         </h1>
         <p className="text-lg text-muted-foreground text-pretty">
-          An independent sketch of how a Sentry on-call connector for Muse could
-          look: a small REST API, an OpenAPI spec, and a SKILL Muse can read to
-          list and lightly triage issues from a phone or WhatsApp.
+          A live on-call API you can use from Muse as a{" "}
+          <strong className="text-foreground">custom connector</strong>, or call
+          with curl. There is no signup on this site.
         </p>
-        <Alert>
-          <TriangleAlert />
-          <AlertTitle>Not an official product</AlertTitle>
-          <AlertDescription>{UNOFFICIAL_DISCLAIMER}</AlertDescription>
-        </Alert>
       </section>
 
       <Card>
         <CardHeader>
-          <CardTitle>What this unofficial interpretation covers</CardTitle>
+          <CardTitle>What you can do on this page</CardTitle>
           <CardDescription>
-            Curated on-call actions only. Not Sentry MCP, not Seer, not a Meta
-            directory listing.
+            This host is running. You do not get an account here — you bring a
+            Sentry token if you want data.
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-3 text-sm leading-6">
-          <p>
-            Official Muse connectors are reviewed by Meta. This project is a
-            <strong> custom-connector shaped concept</strong>: Muse reads the
-            OpenAPI and SKILL, stores a Sentry user token in its own vault, and
-            calls a narrow API. Nothing here is affiliated with or published by
-            Sentry or Meta.
-          </p>
-          <ul className="list-disc space-y-1 pl-5">
-            <li>See who the token belongs to and which orgs it can access</li>
-            <li>Search unresolved issues with Sentry query syntax</li>
-            <li>Open one issue and a truncated latest-event stack</li>
-            <li>Optional writes: resolve, ignore, or assign — after the user confirms</li>
-          </ul>
+        <CardContent className="grid gap-6 text-sm leading-6 sm:grid-cols-2">
+          <div className="space-y-2">
+            <p className="font-medium">You can</p>
+            <ul className="list-disc space-y-1 pl-5">
+              <li>
+                Connect it in Muse today: copy the prompt, then paste your own
+                Sentry User Auth Token when Muse asks. Ask “what’s on fire?”
+              </li>
+              <li>
+                Hit the live API with that same token (
+                <code>GET /api/v1/me</code>, list issues, optional resolve).
+              </li>
+              <li>
+                Read OpenAPI, SKILL, privacy, and terms — Meta’s form uses these
+                URLs too.
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <p className="font-medium">You cannot</p>
+            <ul className="list-disc space-y-1 pl-5">
+              <li>Log in, create an account, or store a token on this site.</li>
+              <li>
+                Find this in Muse’s official directory unless Meta lists it
+                later. Custom connector still works without that.
+              </li>
+              <li>Mint a Sentry token here, or use this as Sentry MCP.</li>
+            </ul>
+          </div>
         </CardContent>
       </Card>
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Connect this unofficial concept</h2>
+        <h2 className="text-xl font-semibold">How it could look</h2>
+        <DemoSketch />
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-xl font-semibold">Use it from Muse</h2>
         <ol className="list-decimal space-y-3 pl-5 text-sm leading-6">
           <li>
-            In Sentry, create a{" "}
-            <strong>User Auth Token</strong> with <code>event:read</code>,{" "}
-            <code>org:read</code>, and <code>project:read</code>. Add{" "}
-            <code>event:write</code> only if you want this unofficial triage
-            PATCH.
+            In Sentry, create a <strong>User Auth Token</strong> with{" "}
+            <code>event:read</code>, <code>org:read</code>, and{" "}
+            <code>project:read</code>. Add <code>event:write</code> only if you
+            want resolve / ignore / assign.
           </li>
           <li>
             Copy the prompt below into Muse. Do not paste the token in the same
@@ -101,7 +112,7 @@ export default async function Home() {
           </li>
           <li>
             When Muse asks for a credential, give the token as a Bearer secret.
-            This unofficial API forwards it to Sentry and does not store it.
+            This API forwards it to Sentry and does not store it.
           </li>
         </ol>
         <Card>
@@ -111,24 +122,33 @@ export default async function Home() {
         </Card>
       </section>
 
+      <section className="space-y-3">
+        <h2 className="text-xl font-semibold">Or call the API yourself</h2>
+        <p className="text-sm text-muted-foreground">
+          Replace the token. Optional header{" "}
+          <code>X-Sentry-Host: us.sentry.io</code> or <code>de.sentry.io</code>.
+        </p>
+        <pre className="overflow-x-auto rounded-lg bg-muted p-3 text-xs leading-5">
+          {`curl -s ${origin}/api/v1/me \\
+  -H "Authorization: Bearer $SENTRY_AUTH_TOKEN"`}
+        </pre>
+      </section>
+
       <Separator />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">
-          Unofficial surfaces Muse can ingest
-        </h2>
+        <h2 className="text-xl font-semibold">Spec and endpoints</h2>
         <div className="grid gap-3 sm:grid-cols-2">
-          <DocLink href="/openapi.json" title="OpenAPI" detail="Machine-readable unofficial API" />
-          <DocLink href="/skill.md" title="SKILL.md" detail="How Muse should treat this concept" />
-          <DocLink href="/api/v1" title="GET /api/v1" detail="Discovery JSON with disclaimer" />
-          <DocLink href="/privacy" title="Privacy" detail="Live unofficial privacy URL for the Meta form" />
-          <DocLink href="/terms" title="Terms" detail="Unofficial terms of use for this sketch" />
+          <DocLink href="/openapi.json" title="OpenAPI" detail="Machine-readable API" />
+          <DocLink href="/skill.md" title="SKILL.md" detail="How Muse should treat this API" />
+          <DocLink href="/api/v1" title="GET /api/v1" detail="Discovery JSON" />
+          <DocLink href="/how-it-looks.png" title="Screenshot" detail="Demo sketch PNG for the Meta form" />
+          <DocLink href="/privacy" title="Privacy" detail="Privacy URL for the Meta form" />
+          <DocLink href="/terms" title="Terms" detail="Terms of use for this sketch" />
         </div>
         <div className="overflow-x-auto rounded-xl ring-1 ring-foreground/10">
           <table className="w-full text-left text-sm">
-            <caption className="sr-only">
-              Unofficial concept API endpoints for a Sentry connector for Muse
-            </caption>
+            <caption className="sr-only">API endpoints</caption>
             <thead className="bg-muted text-muted-foreground">
               <tr>
                 <th className="px-3 py-2 font-medium">Method</th>
@@ -145,19 +165,14 @@ export default async function Home() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-muted-foreground">
-          Every JSON response includes <code>unofficialConcept: true</code> and
-          the same disclaimer. Header <code>X-Unofficial-Concept: true</code> is
-          also set. {UNOFFICIAL_DISCLAIMER}
-        </p>
       </section>
 
       <Card>
         <CardHeader>
-          <CardTitle>Questions about this unofficial concept</CardTitle>
+          <CardTitle>Questions</CardTitle>
           <CardDescription>
             Personal contact for the sketch — not Sentry support, not Meta
-            support, not an official partner channel.
+            support.
           </CardDescription>
         </CardHeader>
         <CardContent className="text-sm leading-6">
@@ -213,7 +228,7 @@ function Row({
       <td className="px-3 py-2 font-mono text-xs">{path}</td>
       <td className="px-3 py-2">
         <Badge variant={klass === "write" ? "destructive" : "secondary"}>
-          {klass === "write" ? "mutating (unofficial)" : "read (unofficial)"}
+          {klass === "write" ? "write" : "read"}
         </Badge>
       </td>
     </tr>

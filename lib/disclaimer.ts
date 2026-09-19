@@ -8,7 +8,7 @@ export const UNOFFICIAL_HEADER = "X-Unofficial-Concept";
 
 export const PRODUCT_NAME = "Unofficial concept: Sentry connector for Meta Muse";
 
-export const CONTACT_NAME = "Assaf Barnir";
+export const CONTACT_NAME = "Barnir";
 export const CONTACT_EMAIL = "barnir@agentmail.to";
 export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}`;
 export const CONTACT_BLURB = `Questions about this unofficial concept: ${CONTACT_NAME} <${CONTACT_EMAIL}>. This is a personal contact for the sketch, not a Sentry or Meta support channel.`;

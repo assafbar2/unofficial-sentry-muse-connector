@@ -60,7 +60,8 @@ Do not file this as Sentry. If you file it as an independent unofficial sketch, 
 - Privacy: `https://unofficial-sentry-muse-connector.vercel.app/privacy`
 - Terms: `https://unofficial-sentry-muse-connector.vercel.app/terms`
 - Icon: `https://unofficial-sentry-muse-connector.vercel.app/connector-icon.png`
+- Screenshot: `https://unofficial-sentry-muse-connector.vercel.app/how-it-looks.png`
 
 Those routes ship with this app. They are not Sentry’s legal pages.
 
-Ping **Assaf Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to). Personal contact for this independent interpretation, not a Sentry or Meta partner/support channel.
+Ping **Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to). Personal contact for this independent interpretation, not a Sentry or Meta partner/support channel.

@@ -62,8 +62,7 @@ export default function PrivacyPage() {
         <a className="underline underline-offset-3" href={CONTACT_MAILTO}>
           {CONTACT_NAME} ({CONTACT_EMAIL})
         </a>
-        . Personal contact for this unofficial sketch, not Sentry or Meta
-        support.
+        . Personal contact for this sketch, not Sentry or Meta support.
       </p>
     </article>
   );

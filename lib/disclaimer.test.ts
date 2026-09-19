@@ -18,7 +18,7 @@ describe("unofficial disclaimer", () => {
     expect(UNOFFICIAL_DISCLAIMER).toContain("Not affiliated with, endorsed by, or published by Sentry or Meta");
     expect(PRODUCT_NAME).toMatch(/^Unofficial concept:/);
     expect(CONTACT_EMAIL).toBe("barnir@agentmail.to");
-    expect(CONTACT_NAME).toBe("Assaf Barnir");
+    expect(CONTACT_NAME).toBe("Barnir");
   });
 
   it("sets the unofficial HTTP header", () => {
