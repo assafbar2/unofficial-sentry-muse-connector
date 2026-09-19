@@ -51,8 +51,12 @@ Do **not** submit the following to Meta. It is placeholder copy for this unoffic
 
 ## Filing this with Meta or Sentry
 
-Do not. If an official connector is desired, that would be a separate, first-party program between Sentry and Meta. This repository is an independent interpretation only.
+Do not file this as Sentry. If you file it as an independent unofficial sketch, use:
 
-## Questions (unofficial sketch)
+- Privacy: `{origin}/privacy`
+- Terms: `{origin}/terms`
+- Icon: `{origin}/connector-icon.png`
+
+Those routes ship with this app. They are not Sentry’s legal pages.
 
 Ping **Assaf Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to). Personal contact for this independent interpretation, not a Sentry or Meta partner/support channel.

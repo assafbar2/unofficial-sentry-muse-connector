@@ -55,6 +55,29 @@ npm run build
 
 See [PARTNER.md](./PARTNER.md). That file is also an unofficial sample, not a real submission to Muse Connector Platform.
 
+## Privacy and terms (for the Meta form)
+
+You do not need a separate legal site. After this app is on a public URL, use:
+
+- Privacy: `https://YOUR-HOST/privacy`
+- Terms: `https://YOUR-HOST/terms`
+- Icon: `https://YOUR-HOST/connector-icon.png` (512×512 PNG)
+
+Until it is deployed, those pages still work locally at [http://localhost:3000/privacy](http://localhost:3000/privacy).
+
+## Putting this on GitHub
+
+GitHub is only a shared folder for the code. This agent cannot create the folder for you (GitHub is not connected here).
+
+1. Open [https://github.com/new](https://github.com/new) while logged into GitHub.
+2. Repository name: `unofficial-sentry-muse-connector` (or anything you like).
+3. Choose **Private**.
+4. Leave “Add a README” **unchecked**.
+5. Click **Create repository**.
+6. Copy the repo URL (it looks like `https://github.com/YOURNAME/unofficial-sentry-muse-connector.git`) and paste it in a message here.
+
+That is the whole “GitHub thingy.” Then this agent can push the code. You do not need GitHub to try the API locally.
+
 ## Questions
 
 This unofficial concept is a personal sketch. Email **Assaf Barnir** at [barnir@agentmail.to](mailto:barnir@agentmail.to) with questions. That is not a Sentry or Meta support channel.

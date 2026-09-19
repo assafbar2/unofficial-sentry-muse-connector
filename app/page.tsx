@@ -1,4 +1,5 @@
 import { headers } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
 import { TriangleAlert } from "lucide-react";
 import { CopyPrompt } from "@/components/copy-prompt";
@@ -37,6 +38,13 @@ export default async function Home() {
     <div className="mx-auto flex w-full max-w-3xl flex-col gap-10 px-4 py-10">
       <section className="space-y-4">
         <Badge variant="outline">Unofficial concept</Badge>
+        <Image
+          src="/connector-icon.png"
+          alt="Unofficial cute Muse connector icon with a purple cloak, not an official Sentry or Meta logo"
+          width={128}
+          height={128}
+          className="size-24 rounded-2xl ring-1 ring-foreground/10"
+        />
         <h1 className="font-heading text-3xl font-semibold tracking-tight text-balance">
           {PRODUCT_NAME}
         </h1>
@@ -113,7 +121,8 @@ export default async function Home() {
           <DocLink href="/openapi.json" title="OpenAPI" detail="Machine-readable unofficial API" />
           <DocLink href="/skill.md" title="SKILL.md" detail="How Muse should treat this concept" />
           <DocLink href="/api/v1" title="GET /api/v1" detail="Discovery JSON with disclaimer" />
-          <DocLink href="/partner.md" title="Sample partner packet" detail="Not a real Meta submission" />
+          <DocLink href="/privacy" title="Privacy" detail="Use this URL in Meta’s form after you deploy" />
+          <DocLink href="/terms" title="Terms" detail="Unofficial terms of use for this sketch" />
         </div>
         <div className="overflow-x-auto rounded-xl ring-1 ring-foreground/10">
           <table className="w-full text-left text-sm">

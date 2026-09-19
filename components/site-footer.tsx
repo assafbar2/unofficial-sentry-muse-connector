@@ -24,6 +24,19 @@ export function SiteFooter() {
           . Personal contact for this unofficial sketch, not a Sentry or Meta
           support channel.
         </p>
+        <p>
+          <a className="underline underline-offset-3 hover:text-foreground" href="/privacy">
+            Privacy
+          </a>
+          {" · "}
+          <a className="underline underline-offset-3 hover:text-foreground" href="/terms">
+            Terms
+          </a>
+          {" · "}
+          <a className="underline underline-offset-3 hover:text-foreground" href="/connector-icon.png">
+            Connector icon
+          </a>
+        </p>
       </div>
     </footer>
   );
