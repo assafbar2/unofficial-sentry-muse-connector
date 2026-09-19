@@ -36,7 +36,7 @@ function mockSentry(routes: Record<string, unknown>) {
 describe("unofficial concept handlers", () => {
   it("handleMe reads user and orgs without storing the token", async () => {
     const { fetchImpl, calls } = mockSentry({
-      "GET /api/0/users/me/": {
+      "GET /api/0/auth/": {
         id: "9",
         name: "Ada",
         email: "ada@example.com",

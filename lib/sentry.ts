@@ -270,9 +270,11 @@ export async function getSentryUser(options: {
   host: AllowedSentryHost;
   fetchImpl?: typeof fetch;
 }): Promise<SentryUser> {
+  // User auth tokens are allowed to read GET /api/0/auth/, but often 403 on
+  // /api/0/users/me/. This unofficial concept uses the auth endpoint.
   return sentryFetch<SentryUser>({
     ...options,
-    path: "/api/0/users/me/",
+    path: "/api/0/auth/",
   });
 }
 
